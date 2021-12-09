@@ -1,8 +1,8 @@
 import React, {useState, useEffect,} from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios'
-import Cards from '../Cards'
-
+import {Card,ListGroup} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 export default function Janrys() {
     let {id} = useParams();
     const [dog, setDog] = useState([])
@@ -14,8 +14,14 @@ export default function Janrys() {
         }) 
     }, [id] )
     return (
-        <div>
-            <Cards  name={dog}/>
+        <div> 
+        <Card style={{ width: '20rem', marginLeft: '-15%' }}> 
+            <ListGroup variant="flush"> 
+            {dog.map(a => ( 
+                <ListGroup.Item as={Link} to={`/genres/${a.id}`}>{a.name}</ListGroup.Item> 
+            ))} 
+            </ListGroup> 
+            </Card> 
         </div>
     )
 }

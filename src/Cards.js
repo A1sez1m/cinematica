@@ -9,7 +9,7 @@ function Cards(props) {
         {props.name.map(v => (
              <> 
            <Row>
-            <Card as={Link} to={`/Tv/${v.id}`} className="p-2 m-4 text:center" style={{ textDecoration: 'none', width: '13rem' }}> 
+            <Card as={Link} to={`/Tv/${v.id}`} className="p-2 m-4 text:center" style={{ textDecoration: 'none', width: '12rem' }}> 
                         <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500' + v.poster_path} /> 
                         <Card.Body> 
                             <Card.Title>{v.title}</Card.Title> 

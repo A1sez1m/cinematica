@@ -6,8 +6,8 @@ import Serials from './Components/Serials'
 import People from './Components/People'
 import Janry from './Components/Janry'
 import Janrys from './Components/Janrys';
-import Tv from './Components/Tv'
-import {Row} from 'react-bootstrap'
+import Tv from './Components/Tv';
+// import {Row} from 'react-bootstrap'
 import {
     Switch,
     Route,
@@ -17,9 +17,8 @@ export default class App extends Component {
         return (
             <>
                 <Navbar/>
-              
-               <Row>
-               <div className="container w-75">
+               <div className="d-flex">
+               <div className="container d-block;">
                     <Switch>
                     <Route path="/Tv/:i" component={Tv}/>
                     <Route path="/janr/:id" component={Janrys}/>
@@ -28,12 +27,13 @@ export default class App extends Component {
                     <Route path="/films" component={Film}/>
                     <Route path="/" component={Home}/>
                </Switch>
-               <div className="container w-25">
-               <Janry/>
                </div>
-                   </div>
+               <div className="d-block;">
+                <Janry/>
+               </div>
+                  
                
-               </Row>
+               </div>
                 
             </>
         )
